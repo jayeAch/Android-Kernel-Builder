@@ -1,9 +1,9 @@
 [  {
     "kernelSource": {
-      "name": "lineageos22onntv",
+      "name": "onn-tv-4k-2021-kernel",
       "repo": "https://github.com/jayeAch/android_kernel_amlogic_linux-4.9/",
       "branch": "lineage-22.2",
-      "device": "dopinder"
+      "device": "meson64_sm1"
     },
     "withKernelSU": false,
     "toolchains": [
