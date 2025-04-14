@@ -1,11 +1,11 @@
 [  {
     "kernelSource": {
-      "name": "miku-KernelSU",
-      "repo": "https://github.com/PhamtomK12/kernel_xiaomi_odin",
-      "branch": "TDA",
-      "device": "odin"
+      "name": "lineageos22onntv",
+      "repo": "https://github.com/jayeAch/android_kernel_amlogic_linux-4.9/tree/lineage-22.2",
+      "branch": "dopinder",
+      "device": "onntv"
     },
-    "withKernelSU": true,
+    "withKernelSU": false,
     "toolchains": [
       {
         "repo": "https://android.googlesource.com/platform/prebuilts/gas/linux-x86",
