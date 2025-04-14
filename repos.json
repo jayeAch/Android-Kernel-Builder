@@ -2,8 +2,8 @@
     "kernelSource": {
       "name": "lineageos22onntv",
       "repo": "https://github.com/jayeAch/android_kernel_amlogic_linux-4.9/tree/lineage-22.2",
-      "branch": "dopinder",
-      "device": "onntv"
+      "branch": "lineage-22.2",
+      "device": "dopinder"
     },
     "withKernelSU": false,
     "toolchains": [
