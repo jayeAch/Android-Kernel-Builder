@@ -140,6 +140,25 @@ jobs:
 
           cat ./arch/${{ env.ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
 
+      - name: "🔧 Apply KSM patches"
+        working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
+        if: ${{ env.withKSM == 'true' }}
+        run: |
+          # Download and apply KSM patches
+          curl -L https://github.com/dynbits/KSM/archive/refs/heads/main.zip -o ksm.zip
+          unzip ksm.zip
+          cd KSM-main
+          for patch in *.patch; do
+            git apply ../$patch || echo "Failed to apply patch $patch"
+          done
+          cd ..
+          rm -rf ksm.zip KSM-main
+
+          # Add KSM configs to defconfig
+          echo -e "\nCONFIG_KSM=y" >> ./arch/${{ env.ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
+          echo -e "\nCONFIG_UKSM=y" >> ./arch/${{ env.ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
+          echo -e "\nCONFIG_PAGE_COUNTER=y" >> ./arch/${{ env.ARCH }}/configs/${{ env.DEFCONFIG_NAME }}
+
       - name: "👍 Make defconfig"
         working-directory: ./${{ env.kernelDir }}/${{ env.kernelName }}
         env:
