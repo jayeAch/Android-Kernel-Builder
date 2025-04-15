@@ -1,10 +1,4 @@
 name: "Build kernels"
-#
-name: Clean only the problematic driver
-  run: |
-    rm -rf drivers/usb/typec/fusb302/
-    make clean
-#
 env:
   CONFIGURATION: "repos.json"
   OUT_DIR: "out"
